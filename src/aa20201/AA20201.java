@@ -5,6 +5,8 @@
  */
 package aa20201;
 
+import busquedas.GeneradorDatos;
+
 /**
  *
  * @author working
@@ -17,7 +19,8 @@ public class AA20201 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        
+        int[] aux = GeneradorDatos.generarArregloInt(8, 10, 10);
+        System.out.println();
     }
     
 }
