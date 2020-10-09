@@ -5,6 +5,8 @@
  */
 package aa20201;
 
+import busquedas.BusquedaSecuencial;
+import busquedas.Busquedas;
 import busquedas.GeneradorDatos;
 
 /**
@@ -19,8 +21,15 @@ public class AA20201 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        int[] aux = GeneradorDatos.generarArregloInt(8, 10, 10);
-        System.out.println();
+        int[] aux = GeneradorDatos.generarArregloIntPeorCaso(6, 100000000, 100);
+     
+        BusquedaSecuencial b1 = new BusquedaSecuencial();
+        int pos = b1.buscar(aux, 6);
+        System.out.println(pos);
+        System.out.println("I: "+b1.gettInicio());
+        System.out.println("F: "+b1.gettFinal());
+        System.out.println("T: "+b1.gettTotal()+"");
+       
     }
     
 }

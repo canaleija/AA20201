@@ -11,10 +11,12 @@ package busquedas;
  */
 public class Busquedas {
     
+    
     public static int busquedaLineal (int[] datos, int x){
-    
-    
-        return 0;
+        for (int j = 0; j < datos.length; j++){
+            if(datos[j]== x) return j;
+        }
+        return -1;
     }
     
 }
