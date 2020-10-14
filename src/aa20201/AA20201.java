@@ -21,13 +21,28 @@ public class AA20201 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        int[] aux = GeneradorDatos.generarArregloIntPeorCaso(6, 100000000, 100);
-     
+        int limite = 100000000;
+        int[] aux;
+        int[] tiempos = new int[limite];
         BusquedaSecuencial b1 = new BusquedaSecuencial();
-        int pos = b1.buscar(aux, 6);
-        System.out.println(pos);
-        System.out.println("I: "+b1.gettInicio());
-        System.out.println("F: "+b1.gettFinal());
+        for (int j = 0; j < limite; j++){
+            aux = GeneradorDatos.generarArregloIntPeorCaso(6, j+1, 1000);
+            int pos = b1.buscar(aux, 6);
+            tiempos[j] = (int) b1.gettTotal();
+            System.out.println("j= "+j+" :"+tiempos[j]);
+        }
+        
+        // grafica y le mandan tiempos
+        
+        
+        
+       
+     
+        // Guardar los tiempos
+        
+           
+        
+        
         System.out.println("T: "+b1.gettTotal()+"");
        
     }
