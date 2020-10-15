@@ -5,6 +5,7 @@
  */
 package aa20201;
 
+import aa20201.data.Grafica;
 import busquedas.BusquedaSecuencial;
 import busquedas.Busquedas;
 import busquedas.GeneradorDatos;
@@ -21,16 +22,21 @@ public class AA20201 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        int limite = 100000000;
+        int limite = 2500000;
         int[] aux;
-        int[] tiempos = new int[limite];
+        double[] tiempos = new double[limite];
         BusquedaSecuencial b1 = new BusquedaSecuencial();
         for (int j = 0; j < limite; j++){
             aux = GeneradorDatos.generarArregloIntPeorCaso(6, j+1, 1000);
             int pos = b1.buscar(aux, 6);
             tiempos[j] = (int) b1.gettTotal();
-            System.out.println("j= "+j+" :"+tiempos[j]);
-        }
+            //System.out.println("j= "+j+" :"+tiempos[j]);
+        }  
+        System.out.println();
+        Grafica g1 = new Grafica("N","Tiempo","Tiempos");
+        g1.agregarSerie("t1",tiempos);
+        g1.crearGrafica();
+        g1.muestraGrafica();
         
         // grafica y le mandan tiempos
         
