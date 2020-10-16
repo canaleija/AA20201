@@ -9,6 +9,7 @@ import aa20201.data.Grafica;
 import busquedas.BusquedaSecuencial;
 import busquedas.Busquedas;
 import busquedas.GeneradorDatos;
+import ordenamiento.Burbuja;
 
 /**
  *
@@ -22,14 +23,15 @@ public class AA20201 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        int limite = 2500000;
+        int n = 20;
         int[] aux;
-        double[] tiempos = new double[limite];
-        BusquedaSecuencial b1 = new BusquedaSecuencial();
-        for (int j = 0; j < limite; j++){
-            aux = GeneradorDatos.generarArregloIntPeorCaso(6, j+1, 1000);
-            int pos = b1.buscar(aux, 6);
-            tiempos[j] = (int) b1.gettTotal();
+        double[] tiempos = new double[n];
+        Burbuja b = new Burbuja();
+        // complejidad algoritmica Sumatoria ( Generar los datos aleatorios + busqueda + almacenar el tiempo)
+        for (int j = 0; j < n; j++){
+            aux = GeneradorDatos.generarArregloInt(j,1000);
+            b.ordenar(aux);
+            tiempos[j] = (int) b.gettTotal();
             //System.out.println("j= "+j+" :"+tiempos[j]);
         }  
         System.out.println();
@@ -37,19 +39,7 @@ public class AA20201 {
         g1.agregarSerie("t1",tiempos);
         g1.crearGrafica();
         g1.muestraGrafica();
-        
-        // grafica y le mandan tiempos
-        
-        
-        
        
-     
-        // Guardar los tiempos
-        
-           
-        
-        
-        System.out.println("T: "+b1.gettTotal()+"");
        
     }
     

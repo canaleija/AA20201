@@ -47,4 +47,14 @@ public class GeneradorDatos {
         }
         return aux;
     }
+    public static int[] generarArregloInt(int n, int bound){
+        int[] arreglo = new int[n];
+        Random ran = new Random();
+     
+        for(int y=0; y < n; y++){
+            arreglo[y] = ran.nextInt(bound);
+        }
+        
+       return arreglo;
+    }
 }
