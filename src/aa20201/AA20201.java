@@ -23,10 +23,11 @@ public class AA20201 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        int n = 20;
+        int n = 5000;
         int[] aux;
         double[] tiempos = new double[n];
         Burbuja b = new Burbuja();
+       
         // complejidad algoritmica Sumatoria ( Generar los datos aleatorios + busqueda + almacenar el tiempo)
         for (int j = 0; j < n; j++){
             aux = GeneradorDatos.generarArregloInt(j,1000);

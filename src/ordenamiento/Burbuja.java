@@ -40,8 +40,19 @@ public class Burbuja {
         return tTotal;
     }
 
-    private void ordenarDatos(int[] datos) {
-       // implementar de manera correcta el ordenamiento por burbuja
-    }
+    private void ordenarDatos(int[] datos) { // peor de los casos  3 + 3n + 16n2  notación "O" grande O(n2)
+      int i, j, aux; // 3
+        for (i = 0; i < datos.length - 1; i++) { //  3(n)
+            // subir la burbuja o elemento a ordenar (ajustamos en la pos que le corresponde)
+            for (j = 0; j < datos.length - 1; j++) { // 16(n)(n) = 16n2
+                // si entra al if se hace intercambio
+                if (datos[j + 1] < datos[j]) { // 4  13
+                    aux = datos[j + 1]; // 3
+                    datos[j + 1] = datos[j]; // 4
+                    datos[j] = aux; // 2
+                }
+            }
+        }
+    }    
     
 }
